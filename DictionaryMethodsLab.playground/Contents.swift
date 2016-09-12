@@ -13,7 +13,12 @@
  */
 // write your code here
 
-
+var starWarsHeroes = [
+    "Luke Skywalker",
+    "Princess Leia",
+    "Han Solo",
+    "Rey"
+]
 
 
 /*: question2
@@ -21,6 +26,10 @@
  */
 // write your code here
 
+var starWarsVillains = [
+    "Darth Vader",
+    "Emperor Palpatine"
+]
 
 
 
@@ -30,14 +39,19 @@
 // write your code here
 
 
-
+var starWarsDroids = [
+    "R2-D2",
+    "C-3P0",
+    "IG-88",
+    "BB-8"
+]
 
 /*: question4
  ### 4. Darn! We forgot to add Kylo Ren, the newest _Star Wars_ villain. Add "Kylo Ren" to `starWarsVillains` using the `append()` method.
  */
 // write your code here
 
-
+starWarsVillains.append("Kylo Ren")
 
 
 /*: question5
@@ -45,6 +59,7 @@
  */
 // write your code here
 
+starWarsDroids.removeAtIndex(2)
 
 
 
@@ -53,7 +68,11 @@
  */
 // write your code here
 
-
+var starWarsCharacters = [
+    "Heroes": starWarsHeroes,
+    "Villains": starWarsVillains,
+    "Droids": starWarsDroids
+]
 
 
 /*: question7
@@ -61,7 +80,11 @@
  */
 // write your code here
 
-
+var starWarsGangsters = [
+    "Watto",
+    "Jabba",
+    "Hutt"
+]
 
 
 /*: question8
@@ -69,8 +92,7 @@
  */
 // write your code here
 
-
-
+starWarsCharacters["Gangsters"] = starWarsGangsters
 
 /*: question9
  ### 9. Use the dictionary's `keys` property to print out all the keys in your dictionary to the console, one line at a time (hint: use iteration). Do you see all four of the keys you created above?
@@ -78,6 +100,9 @@
 // write your code here
 
 
+for (key, value) in starWarsCharacters {
+    print ("\(key)")
+}
 
 
 /*: question10
@@ -85,7 +110,8 @@
  */
 // write your code here
 
-
+let numberOfCharacters = starWarsCharacters.keys.count
+print (numberOfCharacters)
 
 
 /*: question11
@@ -93,7 +119,11 @@
  */
 // write your code here
 
-
+if starWarsCharacters.isEmpty {
+    print ("The dictionary is empty!")
+} else {
+    print ("There are \(starWarsCharacters.count) items in the dictionary.")
+}
 
 
 /*: question12
@@ -101,7 +131,12 @@
  */
 // write your code here
 
-
+var starWarsJedi = [
+    "Star Wars Jedi",
+    "Yoda",
+    "Obi-Wan Kenobi",
+    "Mace Windu"
+]
 
 
 /*: question13
@@ -109,28 +144,56 @@
  */
 // write your code here
 
+//var starWarsCharacters = [
+//    "Heroes": starWarsHeroes,
+//    "Villains": starWarsVillains,
+//    "Droids": starWarsDroids
+//]
+
+
+var updatedCharacters = starWarsCharacters.updateValue(starWarsJedi, forKey: "Jedi")
+
+
+print(starWarsCharacters["Jedi"])
+if let jedi = starWarsCharacters["Jedi"] {
+    print(jedi)
+}
+
+
+if starWarsCharacters["Jedi"] != nil {
+    print ("Added Jedi key")
+} else {
+    print ("Updated Jedi key")
+}
 
 
 
+//if starWarsCharacters.contains ("Jedi") {
+//    print ("Added Jedi key")
+//} else {
+//    print ("Updated Jedi key")
+//}
 /*: question14
  ### 14. I can't remember if we added the a key/value pair for "Bounty Hunters" or not. Regardless, let's not worry about them for now. Use the `removeValueForKey()` method to remove "Bounty Hunters" from `starWarsCharacters`. Print the message "Removed Bounty Hunters" if the key was present in the dictionary, or "Bount Hunters did not exist" if it wasn't.
  */
 // write your code here
 
+starWarsCharacters.removeValueForKey("Bounty Hunters")
 
-
+    if starWarsCharacters["Bounty Hunters"] != nil {
+    print ("Removed Bounty Hunters")
+    } else {
+        print ("Bounty Hunters did not exist")
+    }
 
 /*: question15
  ### 15. We forgot to add a really cool Jedi to the list of Jedi: Aayla Secura. Unfortunately, the code below is broken: It doesn't appear to be adding Aayla Secura to the array. Can you fix it so that it does? (The code has been commented out, since it won't even compile until you've answered the questions above. Start by uncommenting the code, but that's not all you need to fix!)
 
  After you've fixed the error, print out the contents of the "Jedi" key in `starWarsCharacters` to make sure your code works.
  */
-
-/* Start by uncommenting this block of code
  if var jedi = starWarsCharacters["Jedi"] {
  jedi.append("Aayla Secura")
  }
- */
 
 
 
